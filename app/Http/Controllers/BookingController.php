@@ -86,7 +86,7 @@ class BookingController extends Controller
                 'user_id' => $userId,
             ]);
 
-            return back()->withErrors($validated)->with('cleared', true)->withInput()->with('creating', true);
+            return redirect()->route('bookings.index')->with('success', 'Booking created successfully!');
         }
         catch (\Illuminate\Validation\ValidationException $e)
         {
